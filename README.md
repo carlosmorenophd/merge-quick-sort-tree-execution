@@ -34,7 +34,10 @@ Merge sort es un algoritmo de clasificación popular que sigue el enfoque de div
 
 ![Mergeort](asserts/mergeSort.png)
 
-
+## Acerca del autor 
+Estuandite de Doctorado: Juan Carlos Moreno Sanchez
+carlos.moreno.phd@gmail.com
+jcmorenos001@alumno.uaemex.mx
 
 # Program to calculate the ordering using Quicksort and Mergesort, in addition to obtaining its execution tree (English)
 
@@ -70,3 +73,9 @@ Merge sort is a popular sorting algorithm that follows the divide-and-conquer ap
 ## Execution Tree Example
 
 ![Mergeort](asserts/mergeSort.png)
+
+
+## About the author
+Student of PhD: Juan Carlos Moreno Sanchez
+carlos.moreno.phd@gmail.com
+jcmorenos001@alumno.uaemex.mx
