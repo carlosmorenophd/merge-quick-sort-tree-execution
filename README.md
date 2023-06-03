@@ -30,6 +30,9 @@ Merge sort es un algoritmo de clasificación popular que sigue el enfoque de div
 
 3. Vuelva a fusionar las dos sublistas ordenadas para obtener una única lista ordenada.
 
+## Ejemplo del árbol de ejecucción
+
+![Mergeort](asserts/mergeSort.png)
 
 
 
@@ -63,3 +66,7 @@ Merge sort is a popular sorting algorithm that follows the divide-and-conquer ap
 2. Recursively sort each half by applying the merge sort algorithm.
 
 3. Merge the two sorted sublists back together to obtain a single sorted list.
+
+## Execution Tree Example
+
+![Mergeort](asserts/mergeSort.png)

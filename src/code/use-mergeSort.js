@@ -1,77 +1,71 @@
 import dataTree from "data-tree";
 import { uid } from "uid";
 
-const useQuickSort = () => {
+const useMergeSort = () => {
   const parent = uid();
   let tree = [];
 
-  const quickSort = (data) => {
-    return quickSortImplementation({ arr: data, parent });
+  const mergeSort = (arr) => {
+    return mergeSortImplementation({ arr, parent });
   };
-
-  const quickSortImplementation = ({ arr, parent }) => {
+  const mergeSortImplementation = ({ arr, parent }) => {
     if (arr.length <= 1) {
       return arr;
     }
 
-    const pivot = arr[Math.floor(arr.length / 2)];
-    const left = [];
-    const right = [];
+    const mid = Math.floor(arr.length / 2);
+    const leftHalf = arr.slice(0, mid);
+    const rightHalf = arr.slice(mid);
 
     const leaf = {
       parent,
       id: uid(),
-      name: "main",
-      pivot,
+      name: "split",
       element: arr,
-      right,
-      left,
+      right: leftHalf,
+      left: rightHalf,
     };
     tree.push(leaf);
-    let lastId;
-    arr.forEach((element, index) => {
-      if (index === Math.floor(arr.length / 2)) {
-        return;
-      }
-      element < pivot ? left.push(element) : right.push(element);
-      lastId = uid();
-      const leafMove = {
-        parent,
-        id: lastId,
-        name: "sort",
-        pivot: "",
-        right,
-        left,
-      };
-      tree.push(leafMove);
+    const sortedLeftHalf = mergeSortImplementation({
+      arr: leftHalf,
+      parent: leaf.id,
     });
-    return [
-      ...quickSortImplementation({ arr: left, parent: lastId }),
-      pivot,
-      ...quickSortImplementation({ arr: right, parent: lastId }),
-    ];
+    const sortedRightHalf = mergeSortImplementation({
+      arr: rightHalf,
+      parent: leaf.id,
+    });
+
+    return merge({ left: sortedLeftHalf, right: sortedRightHalf });
+  };
+
+  const merge = ({ left, right }) => {
+    const merged = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+
+    while (leftIndex < left.length && rightIndex < right.length) {
+      if (left[leftIndex] <= right[rightIndex]) {
+        merged.push(left[leftIndex++]);
+      } else {
+        merged.push(right[rightIndex++]);
+      }
+    }
+
+    return merged.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
   };
 
   const getTree = () => {
     if (tree.length === 0) {
       throw new Error(
-        "The quick sort function must be called before get tree function!"
+        "The merge sort function must be called before get tree function!"
       );
     } else {
+      console.log(tree);
       return getTreeImplementation().export((data) => {
         return {
           name: `${data.values.id}`,
           attributes: {
-            tag:
-              data.values.name === "main"
-                ? `${data.values.name} -(${
-                    data.values.pivot
-                  }) [${data.values.element.join(",")}]`
-                : `${data.values.name} -(${
-                    data.values.pivot
-                  }) [${data.values.right.join(",")}] [${data.values.left.join(
-                    ","
-                  )}]`,
+            tag: `left: [${data.values.left}] - right[${data.values.right}]`,
           },
         };
       });
@@ -138,9 +132,13 @@ const useQuickSort = () => {
   };
 
   return {
+    mergeSort,
     getTree,
-    quickSort,
   };
+  //   // Example usage:
+  //   const myArray = [7, 2, 1, 6, 8, 5, 3, 4];
+  //   const sortedArray = mergeSort(myArray);
+  //   console.log(sortedArray);
 };
 
-export { useQuickSort };
+export { useMergeSort };

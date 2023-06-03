@@ -6,10 +6,11 @@ import FilterListSharpIcon from "@mui/icons-material/FilterListSharp";
 import { useQuickSort } from "../code/use-quickSort";
 import { Result } from "./Result";
 import Tree from "react-d3-tree";
+import { useMergeSort } from "../code/use-mergeSort";
 
 const BodyUi = (props) => {
   const [data, setData] = useState([6, 7, 8, 9, 5, 1, 2, 3, 4]);
-  const [sort, setSort] = useState(2);
+  const [sort, setSort] = useState(1);
   const [result, setResult] = useState([]);
   const [tree, setTree] = useState({
     name: "Sort",
@@ -51,12 +52,14 @@ const BodyUi = (props) => {
   };
 
   const { quickSort, getTree: getTreeQuick } = useQuickSort();
+  const { mergeSort, getTree: getTreeMerge } = useMergeSort();
   const handleResult = () => {
     if (sort === 2) {
-      const dataSort = quickSort(data);
-      setResult(dataSort);
+      setResult(quickSort(data));
       setTree(getTreeQuick());
     } else if (sort === 1) {
+      setResult(mergeSort(data));
+      setTree(getTreeMerge());
     }
   };
   return (
