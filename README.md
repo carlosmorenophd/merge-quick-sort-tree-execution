@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Programa para calcular el ordenamiento mediante Quicksort y Mergesort, además de obtener su árbol de ejecución (Español)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introducción
 
-## Available Scripts
+Este programa ordena una lista de datos utilizando el algoritmo Quicksort o Mergesort, mostrando su árbol de ejecución.
 
-In the project directory, you can run:
+## Quicksort 
 
-### `npm start`
+Quicksort es un algoritmo de clasificación ampliamente utilizado que sigue el enfoque de divide y vencerás. Fue desarrollado por Tony Hoare en 1959 y es conocido por su eficiencia y desempeño promedio. Quicksort funciona dividiendo una matriz en dos subarreglos, ordenando recursivamente cada subarreglo y luego combinando los subarreglos ordenados para obtener el resultado ordenado final.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Elija un elemento pivote de la matriz. El pivote puede ser cualquier elemento, pero es común seleccionar el último elemento como pivote.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Divida la matriz reorganizando sus elementos de modo que todos los elementos más pequeños que el pivote se coloquen antes del pivote y todos los elementos más grandes que el pivote se coloquen después del pivote. El elemento pivote debería estar ahora en su posición ordenada final.
 
-### `npm test`
+3. Aplique recursivamente los pasos 1 y 2 al subarreglo antes del pivote (es decir, los elementos más pequeños que el pivote) y al subarreglo después del pivote (es decir, los elementos más grandes que el pivote).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Continúe con este proceso hasta que se ordene toda la matriz. El caso base para la recursividad es cuando un subarreglo tiene menos de dos elementos, ya que se considera ordenado.
 
-### `npm run build`
+## Ejemplo del árbol de ejecucción
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Quicksort](asserts/quicksort.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Mergesort
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Merge sort es un algoritmo de clasificación popular que sigue el enfoque de divide y vencerás. Fue inventado por John von Neumann en 1945. La ordenación por combinación divide la lista sin ordenar en sublistas más pequeñas, ordena esas sublistas de forma recursiva y luego las vuelve a fusionar para producir una lista ordenada.
 
-### `npm run eject`
+1. Divida la lista desordenada en dos mitades, aproximadamente del mismo tamaño.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Ordene recursivamente cada mitad aplicando el algoritmo de ordenación por fusión.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Vuelva a fusionar las dos sublistas ordenadas para obtener una única lista ordenada.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Ejemplo del árbol de ejecucción
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Mergeort](asserts/mergeSort.png)
 
-## Learn More
+## Acerca del autor 
+Estuandite de Doctorado: Juan Carlos Moreno Sanchez
+carlos.moreno.phd@gmail.com
+jcmorenos001@alumno.uaemex.mx
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Program to calculate the ordering using Quicksort and Mergesort, in addition to obtaining its execution tree (English)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Introduction
+This program sorts a list of data using the Quicksort or Mergesort algorithm, displaying its execution tree.
 
-### Code Splitting
+## Quicksort 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Quicksort is a widely used sorting algorithm that follows the divide-and-conquer approach. It was developed by Tony Hoare in 1959 and is known for its efficiency and average-case performance. Quicksort works by partitioning an array into two subarrays, recursively sorting each subarray, and then combining the sorted subarrays to obtain the final sorted result.
 
-### Analyzing the Bundle Size
+1. Choose a pivot element from the array. The pivot can be any element, but it's common to select the last element as the pivot.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Partition the array by rearranging its elements so that all elements smaller than the pivot are placed before the pivot, and all elements greater than the pivot are placed after the pivot. The pivot element should now be in its final sorted position.
 
-### Making a Progressive Web App
+3. Recursively apply steps 1 and 2 to the subarray before the pivot (i.e., the elements smaller than the pivot) and the subarray after the pivot (i.e., the elements greater than the pivot).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Continue this process until the entire array is sorted. The base case for the recursion is when a subarray has fewer than two elements, as it is already considered sorted.
 
-### Advanced Configuration
+## Execution Tree Example
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Quicksort](asserts/quicksort.png)
 
-### Deployment
+## Mergesort
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Merge sort is a popular sorting algorithm that follows the divide-and-conquer approach. It was invented by John von Neumann in 1945. Merge sort divides the unsorted list into smaller sublists, sorts those sublists recursively, and then merges them back together to produce a sorted list.
 
-### `npm run build` fails to minify
+1. Divide the unsorted list into two halves, roughly equal in size.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Recursively sort each half by applying the merge sort algorithm.
+
+3. Merge the two sorted sublists back together to obtain a single sorted list.
+
+## Execution Tree Example
+
+![Mergeort](asserts/mergeSort.png)
+
+
+## About the author
+Student of PhD: Juan Carlos Moreno Sanchez
+carlos.moreno.phd@gmail.com
+jcmorenos001@alumno.uaemex.mx

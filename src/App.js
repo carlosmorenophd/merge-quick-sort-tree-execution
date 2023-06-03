@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import { TitleBar } from "./components/TitleBar";
+import BodyUi from "./components/BodyUi";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ width: "100%", m: 1, p: 1 }} height="100vh">
+      <TitleBar title="Sort array of number by merge ad quick sort" />
+      <BodyUi />
+    </Box>
   );
 }
 
